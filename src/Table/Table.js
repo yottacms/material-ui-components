@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table as MuiTable, Paper } from 'material-ui';
+import { Table as MuiTable } from 'material-ui';
 import { withStyles } from 'material-ui/styles';
 import { observer } from "mobx-react";
 import TableHead from './TableHead';
@@ -48,8 +48,7 @@ class Table extends React.Component {
         const { loading } = this.store;
         
         return (
-            <Paper className={classes.root}>
-            
+            <div className={classes.root}>
                 <div className={classes.tableWrapper}>
                     <MuiTable className={classes.table}>
                         <TableHead store={this.store} columns={columns} />
@@ -60,7 +59,7 @@ class Table extends React.Component {
                     <TableFooter store={this.store} />
                 </MuiTable>
                 { loading && <TableSpinner /> }
-            </Paper>
+            </div>
         );
     }
 
